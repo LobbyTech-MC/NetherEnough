@@ -4,7 +4,6 @@ import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.api.researches.Research;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import me.sfiguz7.netherenough.commands.NECommands;
-import me.sfiguz7.netherenough.enchantments.ShinyBoiEnchantment;
 import me.sfiguz7.netherenough.generation.worlds.NEWorld;
 import me.sfiguz7.netherenough.implementation.items.items.AlchemyFire;
 import me.sfiguz7.netherenough.implementation.items.items.FireStarter;
@@ -90,14 +89,6 @@ public class NetherEnough extends JavaPlugin implements SlimefunAddon {
                 ++researchId, "Unstable", 23)
                 .addItems(NEItems.MANA_ROD).register();
         new Alembic().register(this);
-        try {
-            Field accepting = Enchantment.class.getDeclaredField("acceptingNew");
-            accepting.setAccessible(true);
-            accepting.set(null, true);
-        } catch (IllegalAccessException | NoSuchFieldException ignored) {
-            getLogger().warning("Failed to register enchantment. Seems the 'acceptingNew' field changed");
-        }
-        Enchantment.registerEnchantment(new ShinyBoiEnchantment(Constants.SHINY_BOI_ENCHANTMENT));
         for (Powder.Type type : Powder.Type.values()) {
             new Powder(type).register(this);
         }
