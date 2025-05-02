@@ -91,11 +91,9 @@ public class NetherEnough extends JavaPlugin implements SlimefunAddon {
                 .addItems(NEItems.MANA_ROD).register();
         new Alembic().register(this);
         try {
-            if (!Enchantment.isAcceptingRegistrations()) {
-                Field accepting = Enchantment.class.getDeclaredField("acceptingNew");
-                accepting.setAccessible(true);
-                accepting.set(null, true);
-            }
+            Field accepting = Enchantment.class.getDeclaredField("acceptingNew");
+            accepting.setAccessible(true);
+            accepting.set(null, true);
         } catch (IllegalAccessException | NoSuchFieldException ignored) {
             getLogger().warning("Failed to register enchantment. Seems the 'acceptingNew' field changed");
         }

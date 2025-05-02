@@ -25,7 +25,8 @@ public class RedstoneBlocksPopulator extends BlockPopulator {
                 Block b = world.getBlockAt(x, y, z);
                 if (b.getType() == Material.OBSIDIAN) {
                     world.getBlockAt(x, y, z).setType(Material.REDSTONE_BLOCK);
-                    NetherEnough.getRegistry().getIgnisBlocks().add(b.getLocation());
+                    if (NetherEnough.getInstance() != null)
+                        NetherEnough.getRegistry().getIgnisBlocks().add(b.getLocation());
                 }
             }
         }

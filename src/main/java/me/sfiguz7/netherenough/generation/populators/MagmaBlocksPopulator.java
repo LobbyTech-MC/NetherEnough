@@ -14,7 +14,6 @@ public class MagmaBlocksPopulator extends BlockPopulator {
     @Override
     @ParametersAreNonnullByDefault
     public void populate(World world, Random random, Chunk chunk) {
-        System.out.println("Magma at" + chunk.getX() + ", " + chunk.getZ());
         int count = 0;
         int x, y, z;
         boolean isMagma;
@@ -53,7 +52,6 @@ public class MagmaBlocksPopulator extends BlockPopulator {
                 }
             }
         }
-        System.out.println("Generated " + count + " blocks");
     }
 }
 
