@@ -1,12 +1,13 @@
 package me.sfiguz7.netherenough.utils;
 
-import me.sfiguz7.netherenough.NetherEnough;
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
-import java.util.concurrent.ThreadLocalRandom;
+import me.sfiguz7.netherenough.NetherEnough;
 
 public class Utils {
 
@@ -21,8 +22,8 @@ public class Utils {
             Location destination = new Location(world, x, world.getHighestBlockYAt((int) x, (int) z), z);
             p.teleport(destination);
         } else {
-            p.sendMessage(ChatColor.LIGHT_PURPLE + "NetherEnough > " + ChatColor.RED + "The specified " +
-                    "world does not exist!");
+            p.sendMessage(ChatColor.LIGHT_PURPLE + "深渊幻章 > " + ChatColor.RED + "指定的" +
+                    "世界不存在!");
         }
     }
 

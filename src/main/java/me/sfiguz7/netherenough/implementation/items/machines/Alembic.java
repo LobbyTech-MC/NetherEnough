@@ -52,7 +52,9 @@ public class Alembic extends SimpleSlimefunItem<BlockTicker> implements NEInvent
 
     public Alembic() {
         super(NEItems.netherenough, NEItems.ALEMBIC, RecipeType.ENHANCED_CRAFTING_TABLE,
-                new ItemStack[]{null, null, null, null, null, null, null, null, null});
+                new ItemStack[]{ new ItemStack(Material.CRIMSON_HYPHAE), new ItemStack(Material.WITHER_ROSE), new ItemStack(Material.CRIMSON_HYPHAE),
+                    new ItemStack(Material.CRIMSON_HYPHAE), new ItemStack(Material.SOUL_CAMPFIRE), new ItemStack(Material.CRIMSON_HYPHAE),
+                    new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK), new ItemStack(Material.COAL_BLOCK)});
 
         createPreset(this, this::constructMenu);
     }

@@ -24,7 +24,7 @@ public class ManaRod extends SimpleSlimefunItem<BlockTicker> {
         super(NEItems.netherenough, NEItems.MANA_ROD, RecipeType.MAGIC_WORKBENCH,
                 new ItemStack[]{null, SlimefunItems.MAGIC_LUMP_1, null,
                         null, null, null,
-                        null, null, null}
+                        null, SlimefunItems.MAGIC_LUMP_1, null}
         );
     }
 

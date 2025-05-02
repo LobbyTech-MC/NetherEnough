@@ -1,24 +1,25 @@
 package me.sfiguz7.netherenough.implementation.listeners;
 
-import me.sfiguz7.netherenough.NetherEnough;
-import me.sfiguz7.netherenough.generation.worlds.NEWorld;
-import me.sfiguz7.netherenough.utils.Utils;
+import java.util.Arrays;
+import java.util.List;
+import java.util.logging.Level;
+
+import javax.annotation.Nonnull;
+
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.event.EventHandler;
+import static org.bukkit.event.EventPriority.LOWEST;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import javax.annotation.Nonnull;
-import java.util.Arrays;
-import java.util.List;
-import java.util.logging.Level;
-
-import static org.bukkit.event.EventPriority.LOWEST;
+import me.sfiguz7.netherenough.NetherEnough;
+import me.sfiguz7.netherenough.generation.worlds.NEWorld;
+import me.sfiguz7.netherenough.utils.Utils;
 
 public class NEWorldMobSpawnListener implements Listener {
 
@@ -39,7 +40,7 @@ public class NEWorldMobSpawnListener implements Listener {
             }
             World world = e.getLocation().getWorld();
             if (world == null) {
-                NetherEnough.getInstance().getLogger().log(Level.SEVERE, "An entity has spawned in a null world!");
+                NetherEnough.getInstance().getLogger().log(Level.SEVERE, "一个实体在一个空世界中生成了!");
             } else if (Utils.isNEWorld(world)) {
                 e.setCancelled(true);
                 Location loc = e.getLocation();
