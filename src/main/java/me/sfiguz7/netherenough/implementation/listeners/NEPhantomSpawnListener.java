@@ -26,7 +26,7 @@ public class NEPhantomSpawnListener implements Listener {
         World world = entity.getWorld();
         if (Utils.isNEWorld(world)
                 && entity.getType() == EntityType.PHANTOM) {
-            entity.setCustomName(ChatColors.color("&l&5Wandering Soul"));
+            entity.setCustomName(ChatColors.color("&l&5流浪的灵魂"));
         }
     }
 }

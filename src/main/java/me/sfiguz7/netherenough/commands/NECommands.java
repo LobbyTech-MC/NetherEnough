@@ -27,7 +27,7 @@ public class NECommands implements CommandExecutor {
                     Utils.teleportToWorld(p, world);
                 } else {
                     p.sendMessage(ChatColor.LIGHT_PURPLE + "NetherEnough > " + ChatColor.RED +
-                            "Insufficient permissions!");
+                            "权限不足！");
                 }
             }
         } else {
@@ -41,7 +41,7 @@ public class NECommands implements CommandExecutor {
         sender.sendMessage(ChatColors.color("&aNetherEnough &2v" + NetherEnough.getVersion()));
 
         if (sender.hasPermission("ne.command.tpworld")) {
-            sender.sendMessage(ChatColors.color("&3/ne tpworld <world> &b") + "Teleports you to <world>");
+            sender.sendMessage(ChatColors.color("&3/ne tpworld <world> &b") + "将你传送至 <世界名>");
         }
     }
 
