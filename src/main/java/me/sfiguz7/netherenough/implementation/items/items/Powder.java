@@ -4,7 +4,6 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.core.attributes.NotPlaceable;
 import me.sfiguz7.netherenough.implementation.items.machines.Alembic;
-import me.sfiguz7.netherenough.lists.Constants;
 import me.sfiguz7.netherenough.lists.NEItems;
 import me.sfiguz7.netherenough.lists.NERecipeType;
 import org.bukkit.Material;
@@ -19,7 +18,7 @@ public class Powder extends SlimefunItem implements NotPlaceable {
 
     @Override
     public void preRegister() {
-        Enchantment glow = Enchantment.getByKey(Constants.SHINY_BOI_ENCHANTMENT);
+        Enchantment glow = Enchantment.ARROW_INFINITE;
         NEItems.IGNIS.addUnsafeEnchantment(glow, 1);
         NEItems.AQUA.addUnsafeEnchantment(glow, 1);
         NEItems.TERRA.addUnsafeEnchantment(glow, 1);

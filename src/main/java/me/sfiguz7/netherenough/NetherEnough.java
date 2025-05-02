@@ -16,17 +16,14 @@ import me.sfiguz7.netherenough.implementation.listeners.InfusedBlocksListener;
 import me.sfiguz7.netherenough.implementation.listeners.NEPhantomKillListener;
 import me.sfiguz7.netherenough.implementation.listeners.NEPhantomSpawnListener;
 import me.sfiguz7.netherenough.implementation.listeners.NEWorldMobSpawnListener;
-import me.sfiguz7.netherenough.lists.Constants;
 import me.sfiguz7.netherenough.lists.NEItems;
 import me.sfiguz7.netherenough.lists.NERegistry;
 import org.bukkit.Bukkit;
 import org.bukkit.NamespacedKey;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
 import java.io.File;
-import java.lang.reflect.Field;
 import java.util.logging.Level;
 
 public class NetherEnough extends JavaPlugin implements SlimefunAddon {
