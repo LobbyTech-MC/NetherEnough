@@ -22,7 +22,7 @@ public class Utils {
             Location destination = new Location(world, x, world.getHighestBlockYAt((int) x, (int) z), z);
             p.teleport(destination);
         } else {
-            p.sendMessage(ChatColor.LIGHT_PURPLE + "深渊幻章 > " + ChatColor.RED + "指定的 " +
+            p.sendMessage(ChatColor.LIGHT_PURPLE + "深渊幻章 > " + ChatColor.RED + "指定的" +
                     "世界不存在!");
         }
     }
