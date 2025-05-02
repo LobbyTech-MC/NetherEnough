@@ -1,16 +1,16 @@
 package me.sfiguz7.netherenough.implementation.items.machines;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import io.github.thebusybiscuit.slimefun4.utils.ChestMenuUtils;
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenu;
 import me.mrCookieSlime.Slimefun.api.inventory.BlockMenuPreset;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import me.sfiguz7.netherenough.implementation.utils.interfaces.NEInventoryBlock;
 import me.sfiguz7.netherenough.lists.NEItems;
 import org.bukkit.Material;
@@ -26,65 +26,64 @@ import java.util.Map;
 
 public class Alembic extends SimpleSlimefunItem<BlockTicker> implements NEInventoryBlock {
 
+    private static final int MAX_DECREMENT = 6;
+    private static final int[] inSlots = {13, 20, 24, 37, 43};
+    private static final int OUT_SLOT = 49;
+    private static final Map<ItemStack[], ItemStack> alembicRecipes = new HashMap<>();
     private final int[] border = {
-        0, 1, 2, 6, 7, 8,
-        9, 17,
-        18, 26,
-        31
+            0, 1, 2, 6, 7, 8,
+            9, 17,
+            18, 26,
+            31
     };
     private final int[] inputBorder = {
-        3, 4, 5,
-        10, 11, 12, 14, 15, 16,
-        19, 21, 22, 23, 25,
-        27, 28, 29, 30, 32, 33, 34, 35,
-        36, 38, 42, 44,
-        45, 46, 47, 51, 52, 53
+            3, 4, 5,
+            10, 11, 12, 14, 15, 16,
+            19, 21, 22, 23, 25,
+            27, 28, 29, 30, 32, 33, 34, 35,
+            36, 38, 42, 44,
+            45, 46, 47, 51, 52, 53
     };
     private final int[] slotsBorder = {
-        39, 40, 41,
-        48, 50
+            39, 40, 41,
+            48, 50
     };
-    private static final int MAX_DECREMENT = 6;
     private int decrement = MAX_DECREMENT;
-
-
-    // No cargo bois
-    @Override
-    public int[] getInputSlots() {
-        return new int[] {};
-    }
-
-    @Override
-    public int[] getOutputSlots() {
-        return new int[] {};
-    }
-
-    private static final int[] inSlots = {13, 20, 24, 37, 43};
-
-    private static final int OUT_SLOT = 49;
-
-    private static final Map<ItemStack[], ItemStack> alembicRecipes = new HashMap<>();
-
 
     public Alembic() {
         super(NEItems.netherenough, NEItems.ALEMBIC, RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {null, null, null, null, null, null, null, null, null});
+                new ItemStack[]{null, null, null, null, null, null, null, null, null});
 
         createPreset(this, this::constructMenu);
     }
 
+    public static Map<ItemStack[], ItemStack> getAlembicRecipes() {
+        return alembicRecipes;
+    }
+
+    // No cargo bois
+    @Override
+    public int[] getInputSlots() {
+        return new int[]{};
+    }
+
+    @Override
+    public int[] getOutputSlots() {
+        return new int[]{};
+    }
+
     private void constructMenu(@Nonnull BlockMenuPreset preset) {
         for (int i : border) {
-            preset.addItem(i, new CustomItem(new ItemStack(Material.GRAY_STAINED_GLASS_PANE), " "),
-                ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, new CustomItemStack(new ItemStack(Material.GRAY_STAINED_GLASS_PANE), " "),
+                    ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : inputBorder) {
-            preset.addItem(i, new CustomItem(new ItemStack(Material.CYAN_STAINED_GLASS_PANE), " "),
-                ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, new CustomItemStack(new ItemStack(Material.CYAN_STAINED_GLASS_PANE), " "),
+                    ChestMenuUtils.getEmptyClickHandler());
         }
         for (int i : slotsBorder) {
-            preset.addItem(i, new CustomItem(new ItemStack(Material.ORANGE_STAINED_GLASS_PANE), " "),
-                ChestMenuUtils.getEmptyClickHandler());
+            preset.addItem(i, new CustomItemStack(new ItemStack(Material.ORANGE_STAINED_GLASS_PANE), " "),
+                    ChestMenuUtils.getEmptyClickHandler());
         }
     }
 
@@ -120,7 +119,7 @@ public class Alembic extends SimpleSlimefunItem<BlockTicker> implements NEInvent
                 Material campType = camp.getType();
 
                 if (campType != Material.SOUL_CAMPFIRE &&
-                campType != Material.CAMPFIRE) {
+                        campType != Material.CAMPFIRE) {
                     return;
                 }
 
@@ -186,7 +185,7 @@ public class Alembic extends SimpleSlimefunItem<BlockTicker> implements NEInvent
     }
 
     private Integer idx2slot(int i) {
-        switch(i) {
+        switch (i) {
             case 0:
                 return 1;
             case 1:
@@ -198,10 +197,6 @@ public class Alembic extends SimpleSlimefunItem<BlockTicker> implements NEInvent
             default:
                 return 4;
         }
-    }
-
-    public static Map<ItemStack[], ItemStack> getAlembicRecipes() {
-        return alembicRecipes;
     }
 }
 

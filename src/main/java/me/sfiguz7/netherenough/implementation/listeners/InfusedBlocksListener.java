@@ -1,6 +1,6 @@
 package me.sfiguz7.netherenough.implementation.listeners;
 
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.sfiguz7.netherenough.NetherEnough;
 import me.sfiguz7.netherenough.lists.NEItems;
 import org.bukkit.Location;
@@ -36,11 +36,11 @@ public class InfusedBlocksListener implements Listener {
     private ItemStack getInfusedBlock(@Nonnull Material m) {
         switch (m) {
             case CHISELED_NETHER_BRICKS:
-                return new CustomItem(NEItems.DEMONIC_BRICKS);
+                return new CustomItemStack(NEItems.DEMONIC_BRICKS);
             case CHISELED_STONE_BRICKS:
-                return new CustomItem(NEItems.INFUSED_STONE);
+                return new CustomItemStack(NEItems.INFUSED_STONE);
             case CHISELED_QUARTZ_BLOCK:
-                return new CustomItem(NEItems.DWARVEN_MARBLE);
+                return new CustomItemStack(NEItems.DWARVEN_MARBLE);
             default:
                 // Something else must have edited our block without breaking it
                 // We'll simply drop whatever the block is right now

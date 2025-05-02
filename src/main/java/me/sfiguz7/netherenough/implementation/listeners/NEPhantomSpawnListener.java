@@ -1,6 +1,6 @@
 package me.sfiguz7.netherenough.implementation.listeners;
 
-import me.mrCookieSlime.Slimefun.cscorelib2.chat.ChatColors;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import me.sfiguz7.netherenough.utils.Utils;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
@@ -25,7 +25,7 @@ public class NEPhantomSpawnListener implements Listener {
         Entity entity = e.getEntity();
         World world = entity.getWorld();
         if (Utils.isNEWorld(world)
-            && entity.getType() == EntityType.PHANTOM) {
+                && entity.getType() == EntityType.PHANTOM) {
             entity.setCustomName(ChatColors.color("&l&5Wandering Soul"));
         }
     }

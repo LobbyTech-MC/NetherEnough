@@ -24,7 +24,7 @@ public class NEPhantomKillListener implements Listener {
         Entity entity = e.getEntity();
         World world = entity.getLocation().getWorld();
         if (Utils.isNEWorld(world)
-            && entity.getType() == EntityType.PHANTOM) {
+                && entity.getType() == EntityType.PHANTOM) {
             e.setCancelled(true);
         }
     }

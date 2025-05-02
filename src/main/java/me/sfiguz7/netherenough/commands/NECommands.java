@@ -1,6 +1,6 @@
 package me.sfiguz7.netherenough.commands;
 
-import me.mrCookieSlime.Slimefun.cscorelib2.chat.ChatColors;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import me.sfiguz7.netherenough.NetherEnough;
 import me.sfiguz7.netherenough.utils.Utils;
 import org.bukkit.Bukkit;
@@ -19,7 +19,7 @@ public class NECommands implements CommandExecutor {
     @ParametersAreNonnullByDefault
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length == 2
-            && args[0].equalsIgnoreCase("tpworld")) {
+                && args[0].equalsIgnoreCase("tpworld")) {
             if (sender instanceof Player) {
                 Player p = (Player) sender;
                 if (p.hasPermission("ne.command.tpworld")) {
@@ -27,7 +27,7 @@ public class NECommands implements CommandExecutor {
                     Utils.teleportToWorld(p, world);
                 } else {
                     p.sendMessage(ChatColor.LIGHT_PURPLE + "NetherEnough > " + ChatColor.RED +
-                        "Insufficient permissions!");
+                            "Insufficient permissions!");
                 }
             }
         } else {

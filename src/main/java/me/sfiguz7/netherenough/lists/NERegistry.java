@@ -15,10 +15,14 @@ public class NERegistry {
     private final Set<Location> infusedBlocks = new HashSet<>();
     private final Set<Location> ignisBlocks = new HashSet<>();
 
-    public Map<UUID, NEWorld> getNeWorlds() { return neWorlds; }
+    public Map<UUID, NEWorld> getNeWorlds() {
+        return neWorlds;
+    }
+
     public Set<Location> getInfusedBlocks() {
         return infusedBlocks;
     }
+
     public Set<Location> getIgnisBlocks() {
         return ignisBlocks;
     }

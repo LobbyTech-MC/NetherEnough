@@ -58,10 +58,10 @@ public class ShinyBoiEnchantment extends Enchantment {
     @Override
     public boolean canEnchantItem(ItemStack itemStack) {
         return SlimefunUtils.isItemSimilar(itemStack, NEItems.IGNIS, false) ||
-            SlimefunUtils.isItemSimilar(itemStack, NEItems.AQUA, false) ||
-            SlimefunUtils.isItemSimilar(itemStack, NEItems.TERRA, false) ||
-            SlimefunUtils.isItemSimilar(itemStack, NEItems.FULGUR, false) ||
-            SlimefunUtils.isItemSimilar(itemStack, NEItems.AURA, false) ||
-            SlimefunUtils.isItemSimilar(itemStack, NEItems.ARCANE_POWDER, false);
+                SlimefunUtils.isItemSimilar(itemStack, NEItems.AQUA, false) ||
+                SlimefunUtils.isItemSimilar(itemStack, NEItems.TERRA, false) ||
+                SlimefunUtils.isItemSimilar(itemStack, NEItems.FULGUR, false) ||
+                SlimefunUtils.isItemSimilar(itemStack, NEItems.AURA, false) ||
+                SlimefunUtils.isItemSimilar(itemStack, NEItems.ARCANE_POWDER, false);
     }
 }

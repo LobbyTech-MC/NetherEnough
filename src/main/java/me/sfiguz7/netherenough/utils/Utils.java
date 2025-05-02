@@ -10,7 +10,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Utils {
 
-    private Utils() {}
+    private Utils() {
+    }
 
     public static void teleportToWorld(Player p, World world) {
         if (world != null) {
@@ -21,7 +22,7 @@ public class Utils {
             p.teleport(destination);
         } else {
             p.sendMessage(ChatColor.LIGHT_PURPLE + "NetherEnough > " + ChatColor.RED + "The specified " +
-                "world does not exist!");
+                    "world does not exist!");
         }
     }
 

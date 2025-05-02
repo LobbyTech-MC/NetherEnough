@@ -14,7 +14,6 @@ import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
@@ -24,7 +23,7 @@ import static org.bukkit.event.EventPriority.LOWEST;
 public class NEWorldMobSpawnListener implements Listener {
 
     private final List<EntityType> allowedEntities = Arrays.asList(
-        EntityType.PHANTOM, EntityType.HOGLIN, EntityType.POLAR_BEAR
+            EntityType.PHANTOM, EntityType.HOGLIN, EntityType.POLAR_BEAR
     );
 
     public NEWorldMobSpawnListener(JavaPlugin plugin) {

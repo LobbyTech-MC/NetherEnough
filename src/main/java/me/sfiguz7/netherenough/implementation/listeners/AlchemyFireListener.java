@@ -1,7 +1,7 @@
 package me.sfiguz7.netherenough.implementation.listeners;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.sfiguz7.netherenough.implementation.items.items.AlchemyFire;
 import me.sfiguz7.netherenough.implementation.items.items.FireStarter;
@@ -29,8 +29,9 @@ public class AlchemyFireListener implements Listener {
             Optional<Block> b = e.getClickedBlock();
             b.ifPresent(block -> {
                 if (BlockStorage.check(block) instanceof AlchemyFire) {
-                e.cancel();
-            }});
+                    e.cancel();
+                }
+            });
         }
     }
 }

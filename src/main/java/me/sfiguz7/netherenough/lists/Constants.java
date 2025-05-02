@@ -6,8 +6,9 @@ import org.bukkit.NamespacedKey;
 public final class Constants {
 
     public static final NamespacedKey SHINY_BOI_ENCHANTMENT = new NamespacedKey(NetherEnough.getInstance(),
-        "shiny_boi_enchantment");
+            "shiny_boi_enchantment");
 
-    private Constants() {}
+    private Constants() {
+    }
 
 }

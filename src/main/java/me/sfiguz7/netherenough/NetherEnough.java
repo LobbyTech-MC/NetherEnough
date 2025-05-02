@@ -1,10 +1,11 @@
 package me.sfiguz7.netherenough;
 
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
-import io.github.thebusybiscuit.slimefun4.core.researching.Research;
-import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
+import io.github.thebusybiscuit.slimefun4.api.researches.Research;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.updater.GitHubBuildsUpdater;
 import me.sfiguz7.netherenough.commands.NECommands;
 import me.sfiguz7.netherenough.enchantments.ShinyBoiEnchantment;
+import me.sfiguz7.netherenough.generation.worlds.NEWorld;
 import me.sfiguz7.netherenough.implementation.items.items.AlchemyFire;
 import me.sfiguz7.netherenough.implementation.items.items.FireStarter;
 import me.sfiguz7.netherenough.implementation.items.items.ManaRod;
@@ -16,7 +17,6 @@ import me.sfiguz7.netherenough.implementation.listeners.InfusedBlocksListener;
 import me.sfiguz7.netherenough.implementation.listeners.NEPhantomKillListener;
 import me.sfiguz7.netherenough.implementation.listeners.NEPhantomSpawnListener;
 import me.sfiguz7.netherenough.implementation.listeners.NEWorldMobSpawnListener;
-import me.sfiguz7.netherenough.generation.worlds.NEWorld;
 import me.sfiguz7.netherenough.lists.Constants;
 import me.sfiguz7.netherenough.lists.NEItems;
 import me.sfiguz7.netherenough.lists.NERegistry;
@@ -29,7 +29,6 @@ import javax.annotation.Nonnull;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class NetherEnough extends JavaPlugin implements SlimefunAddon {
 
@@ -38,6 +37,18 @@ public class NetherEnough extends JavaPlugin implements SlimefunAddon {
     private int researchId = 7700;
 
     private int manaRodChance;
+
+    public static NetherEnough getInstance() {
+        return instance;
+    }
+
+    public static NERegistry getRegistry() {
+        return instance.registry;
+    }
+
+    public static String getVersion() {
+        return instance.getDescription().getVersion();
+    }
 
     @Override
     public void onEnable() {
@@ -48,7 +59,7 @@ public class NetherEnough extends JavaPlugin implements SlimefunAddon {
         }
 
         if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "Sfiguz7/NetherEnough/master").start();
+            new GitHubBuildsUpdater(this, getFile(), "balugaq/NetherEnough/master").start();
         }
 
         // Commands
@@ -76,8 +87,8 @@ public class NetherEnough extends JavaPlugin implements SlimefunAddon {
         // Items
         new ManaRod().register(this);
         new Research(new NamespacedKey(this, "unstable"),
-            ++researchId, "Unstable", 23)
-            .addItems(NEItems.MANA_ROD).register();
+                ++researchId, "Unstable", 23)
+                .addItems(NEItems.MANA_ROD).register();
         new Alembic().register(this);
         try {
             if (!Enchantment.isAcceptingRegistrations()) {
@@ -115,18 +126,6 @@ public class NetherEnough extends JavaPlugin implements SlimefunAddon {
     @Override
     public JavaPlugin getJavaPlugin() {
         return this;
-    }
-
-    public static NetherEnough getInstance() {
-        return instance;
-    }
-
-    public static NERegistry getRegistry() {
-        return instance.registry;
-    }
-
-    public static String getVersion() {
-        return instance.getDescription().getVersion();
     }
 
     public int getManaRodChance() {

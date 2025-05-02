@@ -69,11 +69,11 @@ public class MuspelheimGenerator extends ChunkGenerator {
     @Nonnull
     public List<BlockPopulator> getDefaultPopulators(@Nonnull World world) {
         return Arrays.asList(
-            new CryingObsidianPopulator(),
-            new NetheriteBlocksPopulator(),
-            new CoalBlocksPopulator(),
-            new RedstoneBlocksPopulator(),
-            new MagmaBlocksPopulator()
+                new CryingObsidianPopulator(),
+                new NetheriteBlocksPopulator(),
+                new CoalBlocksPopulator(),
+                new RedstoneBlocksPopulator(),
+                new MagmaBlocksPopulator()
         );
     }
 }

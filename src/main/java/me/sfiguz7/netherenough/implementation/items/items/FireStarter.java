@@ -1,9 +1,9 @@
 package me.sfiguz7.netherenough.implementation.items.items;
 
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import me.sfiguz7.netherenough.lists.NEItems;
 import org.bukkit.Material;
@@ -22,10 +22,10 @@ public class FireStarter extends SimpleSlimefunItem<ItemUseHandler> {
 
     public FireStarter() {
         super(NEItems.netherenough, NEItems.FIRE_STARTER, RecipeType.ENHANCED_CRAFTING_TABLE,
-            new ItemStack[] {
-                new ItemStack(Material.FLINT), new ItemStack(Material.IRON_INGOT), null,
-                new ItemStack(Material.WHEAT), new ItemStack(Material.GUNPOWDER), null,
-                null, null, null}
+                new ItemStack[]{
+                        new ItemStack(Material.FLINT), new ItemStack(Material.IRON_INGOT), null,
+                        new ItemStack(Material.WHEAT), new ItemStack(Material.GUNPOWDER), null,
+                        null, null, null}
         );
     }
 
@@ -48,7 +48,7 @@ public class FireStarter extends SimpleSlimefunItem<ItemUseHandler> {
         };
     }
 
-    void handleFlintAndSteel (PlayerRightClickEvent e) {
+    void handleFlintAndSteel(PlayerRightClickEvent e) {
         ItemStack item = e.getItem();
         Damageable meta = (Damageable) item.getItemMeta();
         // Flint and steel durability is 64 or ~13*5. We want 5 uses.

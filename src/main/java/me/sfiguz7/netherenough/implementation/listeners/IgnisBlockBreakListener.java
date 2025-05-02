@@ -1,15 +1,13 @@
 package me.sfiguz7.netherenough.implementation.listeners;
 
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
 import me.sfiguz7.netherenough.NetherEnough;
 import me.sfiguz7.netherenough.lists.NEItems;
 import org.bukkit.Location;
-import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import javax.annotation.Nonnull;
@@ -29,7 +27,7 @@ public class IgnisBlockBreakListener implements Listener {
         if (NetherEnough.getRegistry().getIgnisBlocks().contains(loc)) {
             NetherEnough.getRegistry().getIgnisBlocks().remove(loc);
             e.setDropItems(false);
-            e.getBlock().getWorld().dropItemNaturally(loc, new CustomItem(NEItems.IGNIS));
+            e.getBlock().getWorld().dropItemNaturally(loc, new CustomItemStack(NEItems.IGNIS));
         }
     }
 }

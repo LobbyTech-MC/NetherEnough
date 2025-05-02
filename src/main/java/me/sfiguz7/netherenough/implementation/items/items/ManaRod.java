@@ -1,10 +1,10 @@
 package me.sfiguz7.netherenough.implementation.items.items;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
 import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
-import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.sfiguz7.netherenough.NetherEnough;
 import me.sfiguz7.netherenough.lists.NEItems;
@@ -22,10 +22,10 @@ public class ManaRod extends SimpleSlimefunItem<BlockTicker> {
 
     public ManaRod() {
         super(NEItems.netherenough, NEItems.MANA_ROD, RecipeType.MAGIC_WORKBENCH,
-            new ItemStack[] {null, SlimefunItems.MAGIC_LUMP_1, null,
-                null, null, null,
-                null, null, null}
-                );
+                new ItemStack[]{null, SlimefunItems.MAGIC_LUMP_1, null,
+                        null, null, null,
+                        null, null, null}
+        );
     }
 
 
@@ -49,7 +49,7 @@ public class ManaRod extends SimpleSlimefunItem<BlockTicker> {
                                 Location loc = b2.getLocation();
                                 world.playSound(loc, Sound.BLOCK_BUBBLE_COLUMN_BUBBLE_POP, 20, 3);
                                 world.spawnParticle(Particle.ENCHANTMENT_TABLE, loc.add(0.5, 1.5, 0.5), 16, 0.3F,
-                                    0.2F, 0.3F);
+                                        0.2F, 0.3F);
                                 b2.setType(mat);
                                 NetherEnough.getRegistry().getInfusedBlocks().add(b2.getLocation());
                             }
