@@ -48,7 +48,7 @@ public class ManaRod extends SimpleSlimefunItem<BlockTicker> {
                             if (index < NetherEnough.getInstance().getManaRodChance()) {
                                 Location loc = b2.getLocation();
                                 world.playSound(loc, Sound.BLOCK_BUBBLE_COLUMN_BUBBLE_POP, 20, 3);
-                                world.spawnParticle(Particle.ENCHANTMENT_TABLE, loc.add(0.5, 1.5, 0.5), 16, 0.3F,
+                                world.spawnParticle(Particle.ENCHANT, loc.add(0.5, 1.5, 0.5), 16, 0.3F,
                                         0.2F, 0.3F);
                                 b2.setType(mat);
                                 NetherEnough.getRegistry().getInfusedBlocks().add(b2.getLocation());

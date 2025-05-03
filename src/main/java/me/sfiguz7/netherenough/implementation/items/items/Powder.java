@@ -18,7 +18,7 @@ public class Powder extends SlimefunItem implements NotPlaceable {
 
     @Override
     public void preRegister() {
-        Enchantment glow = Enchantment.ARROW_INFINITE;
+        Enchantment glow = Enchantment.INFINITY;
         NEItems.IGNIS.addUnsafeEnchantment(glow, 1);
         NEItems.AQUA.addUnsafeEnchantment(glow, 1);
         NEItems.TERRA.addUnsafeEnchantment(glow, 1);
@@ -32,7 +32,7 @@ public class Powder extends SlimefunItem implements NotPlaceable {
         ),
         WATER(new ItemStack[]{new ItemStack(Material.LAPIS_LAZULI), new ItemStack(Material.WARPED_FUNGUS), new ItemStack(Material.BLUE_GLAZED_TERRACOTTA), new ItemStack(Material.BLUE_WOOL), new ItemStack(Material.PACKED_ICE)}, NEItems.AQUA
         ),
-        EARTH(new ItemStack[]{new ItemStack(Material.EMERALD), new ItemStack(Material.ZOMBIE_HEAD), new ItemStack(Material.SLIME_BLOCK), new ItemStack(Material.SCUTE), new ItemStack(Material.LILY_PAD)}, NEItems.TERRA
+        EARTH(new ItemStack[]{new ItemStack(Material.EMERALD), new ItemStack(Material.ZOMBIE_HEAD), new ItemStack(Material.SLIME_BLOCK), new ItemStack(Material.TURTLE_SCUTE), new ItemStack(Material.LILY_PAD)}, NEItems.TERRA
         ),
         LIGHTNING(new ItemStack[]{new ItemStack(Material.GOLD_INGOT), new ItemStack(Material.END_STONE_BRICKS), new ItemStack(Material.GLOWSTONE), new ItemStack(Material.SPONGE), new ItemStack(Material.SUNFLOWER)}, NEItems.FULGUR
         ),
